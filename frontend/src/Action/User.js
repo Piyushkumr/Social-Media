@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../utils/axiosInstance';
 
 export const loginUser = (email, password) => async (dispatch) => {
     try {
