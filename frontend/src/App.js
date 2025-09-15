@@ -23,10 +23,6 @@ function App() {
   // const loadUserCalled = useRef(false);
 
   useEffect(() => {
-    // if(!loadUserCalled.current){
-    //   dispatch(loadUser());
-    //   loadUserCalled.current = true;
-    // }
     dispatch(loadUser());
   }, [dispatch]);
 

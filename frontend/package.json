@@ -45,5 +45,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://social-media-dwya.onrender.com"
+  "proxy": "http://localhost:5000"
 }
