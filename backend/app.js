@@ -8,6 +8,9 @@ if(process.env.NODE_ENV !== "production"){
     require("dotenv").config({path: "backend/config/config.env"});
 }
 
+app.set('trust proxy', 1);
+
+
 app.use(cors({
   origin: process.env.FRONTEND_URL,
   credentials: true,

@@ -39,6 +39,8 @@ exports.register = async (req, res) => {
         const options = {
             expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
             httpOnly: true,
+            secure: true,
+            sameSite: 'None',
         };
 
         res.status(201).cookie("token", token, options).json({
@@ -81,6 +83,8 @@ exports.login = async (req, res) => {
         const options = {
             expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
             httpOnly: true,
+            secure: true,
+            sameSite: 'None',
         };
 
         res.status(200).cookie("token", token, options).json({
@@ -361,7 +365,7 @@ exports.getUserProfile = async (req, res) => {
 
 exports.getAllUsers = async (req, res) => {
     try {
-        const users = await User.find({name: { $regex: req.query.name, $options: "i" }});
+        const users = await User.find({ name: { $regex: req.query.name, $options: "i" } });
 
         res.status(200).json({
             success: true,
